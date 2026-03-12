@@ -1,0 +1,212 @@
+/* 
+  Premium Cloth Selling Website - Design System
+  Theme: Royal Gold, Deep Charcoal, and Soft Silks
+*/
+
+:root {
+    /* Color Palette - HSL for easy manipulation */
+    --primary: 43 50% 50%;
+    /* Golden Tan */
+    --primary-light: 43 50% 70%;
+    --primary-dark: 43 60% 30%;
+
+    --accent: 160 40% 20%;
+    /* Deep Emerald */
+
+    --bg-main: 30 20% 98%;
+    /* Soft Cream */
+    --bg-card: 0 0% 100%;
+    --text-main: 220 15% 15%;
+    /* Rich Charcoal */
+    --text-muted: 220 10% 45%;
+
+    --white: 0 0% 100%;
+    --glass: hsla(0, 0%, 100%, 0.7);
+
+    /* Typography */
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+    /* Spacing & Borders */
+    --radius-sm: 4px;
+    --radius-md: 12px;
+    --radius-lg: 24px;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --shadow-strong: 0 20px 50px rgba(0, 0, 0, 0.1);
+
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: hsl(var(--bg-main));
+    color: hsl(var(--text-main));
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.serif {
+    font-family: var(--font-serif);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.glass {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn-primary {
+    background-color: hsl(var(--primary-dark));
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: hsl(var(--primary));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-strong);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid hsl(var(--primary-dark));
+    color: hsl(var(--primary-dark));
+}
+
+.btn-outline:hover {
+    background: hsl(var(--primary-dark));
+    color: var(--white);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal {
+    animation: fadeIn 1s forwards;
+}
+
+/* Active filter button */
+#filter-btns .btn.active {
+    background-color: hsl(var(--primary-dark));
+    color: white;
+    border-color: hsl(var(--primary-dark));
+}
+
+/* Search input focus state */
+#product-search:focus {
+    outline: none;
+    border-color: hsl(var(--primary-dark));
+    box-shadow: 0 0 0 3px hsl(var(--primary-light) / 30%);
+}
+
+/* Scroll offset for fixed nav */
+section {
+    scroll-margin-top: 80px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    nav ul {
+        display: none;
+    }
+
+    #hero h1 {
+        font-size: 2.8rem !important;
+    }
+
+    #hero>.container>div {
+        max-width: 90% !important;
+    }
+
+    #hero [style*="position: absolute"] {
+        display: none;
+    }
+
+    #product-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+
+@media (max-width: 600px) {
+    #product-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    #cart-drawer {
+        width: 100vw !important;
+        right: -100vw !important;
+    }
+
+    #cart-drawer[style*="right: 0"] {
+        right: 0 !important;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+}

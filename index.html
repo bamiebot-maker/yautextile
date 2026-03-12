@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAU | Textile and Bespoke</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="glass reveal" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
+        <nav class="container"
+            style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem;">
+            <a href="#" class="serif"
+                style="font-size: 1.5rem; letter-spacing: 0.1em; text-transform: uppercase;">YAU</a>
+            <ul
+                style="display: flex; gap: 3rem; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#collection">Collection</a></li>
+                <li><a href="#about">Our Story</a></li>
+            </ul>
+            <div style="display: flex; align-items: center; gap: 1.5rem;">
+                <button id="cart-btn" style="background: none; border: none; cursor: pointer; position: relative;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1" />
+                        <circle cx="20" cy="21" r="1" />
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                    </svg>
+                    <span id="cart-count"
+                        style="position: absolute; top: -8px; right: -8px; background: hsl(var(--accent)); color: white; font-size: 10px; padding: 2px 6px; border-radius: 10px; font-weight: 700;">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero"
+            style="position: relative; height: 100vh; display: flex; align-items: center; background: hsl(var(--bg-main)); overflow: hidden;">
+            <div class="container" style="z-index: 1; width: 100%;">
+                <div style="max-width: 600px;" class="reveal">
+                    <h1 style="font-size: 4.5rem; line-height: 1.1; margin-bottom: 2rem;">Elegance in Every <span
+                            class="serif" style="font-style: italic;">Bespoke.</span></h1>
+                    <p style="font-size: 1.1rem; color: hsl(var(--text-muted)); margin-bottom: 3rem; max-width: 500px;">
+                        Discover our curated collection of luxury textiles, sourced from the finest mills around the
+                        globe. Premium fabrics for your most ambitious creations.
+                    </p>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#collection" class="btn btn-primary">Shop Collection</a>
+                        <a href="#about" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Decorative image -->
+            <div style="position: absolute; right: -5%; top: 50%; transform: translateY(-50%); width: 50%; height: 80vh; border-radius: var(--radius-lg) 0 0 var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-strong);"
+                class="reveal">
+                <img src="luxury_silk_fabric_1772187339580.png" alt="Luxurious Silk"
+                    style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </section>
+
+        <!-- Product Collection -->
+        <section id="collection" style="padding: 10rem 0;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 6rem;">
+                    <h2 style="font-size: 3rem; margin-bottom: 1rem;">Imperial Collection</h2>
+                    <p
+                        style="color: hsl(var(--text-muted)); text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; font-weight: 700;">
+                        Premium Fabrics by the Yard</p>
+                </div>
+
+                <!-- Filters -->
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem; flex-wrap: wrap; gap: 2rem;">
+                    <div style="display: flex; gap: 1rem;" id="filter-btns">
+                        <button class="btn btn-outline active" data-filter="all"
+                            style="padding: 0.8rem 1.5rem; font-size: 0.75rem;">All</button>
+                        <button class="btn btn-outline" data-filter="Luxury Silk"
+                            style="padding: 0.8rem 1.5rem; font-size: 0.75rem;">Silk</button>
+                        <button class="btn btn-outline" data-filter="Vintage Brocade"
+                            style="padding: 0.8rem 1.5rem; font-size: 0.75rem;">Brocade</button>
+                        <button class="btn btn-outline" data-filter="Fine Linen"
+                            style="padding: 0.8rem 1.5rem; font-size: 0.75rem;">Linen</button>
+                    </div>
+                    <div style="position: relative;">
+                        <input type="text" id="product-search" placeholder="Search fabrics..."
+                            style="padding: 1rem 1.5rem; border: 1px solid rgba(0,0,0,0.1); border-radius: var(--radius-sm); font-family: var(--font-sans); width: 300px; background: white;">
+                    </div>
+                </div>
+
+                <div id="product-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 3rem;">
+                    <!-- Products will be injected here by app.js -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: hsl(var(--text-main)); color: var(--white); padding: 8rem 0 4rem;">
+        <div class="container">
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 6rem;">
+                <div>
+                    <h3 class="serif" style="font-size: 1.5rem; margin-bottom: 1.5rem; letter-spacing: 0.05em;">Yusking
+                    </h3>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Providing the world's most luxurious
+                        textiles directly to artisans and creators. Elegance by the yard.</p>
+                </div>
+                <div>
+                    <h4
+                        style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem;">
+                        Collection</h4>
+                    <ul style="color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 2.2;">
+                        <li><a href="#">Silks</a></li>
+                        <li><a href="#">Brocades</a></li>
+                        <li><a href="#">Linens</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4
+                        style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem;">
+                        Client Care</h4>
+                    <ul style="color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 2.2;">
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Wholesale</a></li>
+                        <li><a href="#">Fabric Care</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4
+                        style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem;">
+                        Join the Atelier</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-bottom: 1.5rem;">Subscribe for
+                        exclusive access to new releases.</p>
+                    <div style="display: flex;">
+                        <input type="email" placeholder="Email Address"
+                            style="background: rgba(255,255,255,0.1); border: none; padding: 0.8rem 1rem; color: white; flex-grow: 1;">
+                        <button class="btn btn-primary" style="padding: 0.8rem 1.5rem; border-radius: 0;">Join</button>
+                    </div>
+                </div>
+            </div>
+            <div
+                style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 3rem; text-align: center; color: rgba(255,255,255,0.4); font-size: 0.8rem;">
+                &copy; 2026 Yusking Atelier. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div id="cart-drawer" class="glass"
+        style="position: fixed; top: 0; right: -450px; width: 450px; height: 100vh; z-index: 2000; padding: 3rem; transition: var(--transition); display: flex; flex-direction: column;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem;">
+            <h3 class="serif" style="font-size: 1.8rem;">Your Selection</h3>
+            <button id="close-cart"
+                style="background: none; border: none; cursor: pointer; font-size: 1.2rem;">&times;</button>
+        </div>
+        <div id="cart-items" style="flex-grow: 1; overflow-y: auto;">
+            <!-- Cart items injected here -->
+            <p style="text-align: center; color: hsl(var(--text-muted)); margin-top: 5rem;">Your gallery is currently
+                empty.</p>
+        </div>
+        <div id="cart-footer" style="border-top: 1px solid rgba(0,0,0,0.1); padding-top: 2rem;">
+            <div
+                style="display: flex; justify-content: space-between; font-weight: 700; font-size: 1.2rem; margin-bottom: 2rem;">
+                <span>Total</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button id="checkout-btn" class="btn btn-primary" style="width: 100%;">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
