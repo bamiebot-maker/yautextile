@@ -18,29 +18,25 @@
 <body>
 
     <!-- Navigation -->
-    <header class="glass reveal" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
-        <nav class="container" id="main-nav"
-            style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; position: relative;">
-            <a href="#" class="serif"
-                style="font-size: 1.5rem; letter-spacing: 0.1em; text-transform: uppercase;">YAU</a>
-            <ul id="nav-links"
-                style="display: flex; gap: 3rem; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;">
+    <header id="main-header" class="glass reveal">
+        <nav class="container">
+            <a href="#" class="logo serif">YAU</a>
+            <ul id="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#collection">Collection</a></li>
                 <li><a href="#about">Our Story</a></li>
             </ul>
-            <div style="display: flex; align-items: center; gap: 1.5rem;">
-                <button id="cart-btn" style="background: none; border: none; cursor: pointer; position: relative;">
+            <div class="header-actions">
+                <button id="cart-btn" class="icon-btn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="9" cy="21" r="1" />
                         <circle cx="20" cy="21" r="1" />
                         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
                     </svg>
-                    <span id="cart-count"
-                        style="position: absolute; top: -8px; right: -8px; background: hsl(var(--accent)); color: white; font-size: 10px; padding: 2px 6px; border-radius: 10px; font-weight: 700;">0</span>
+                    <span id="cart-count">0</span>
                 </button>
-                <button id="mobile-menu-btn" class="mobile-only" style="background: none; border: none; cursor: pointer; color: inherit; display: none;">
+                <button id="mobile-menu-btn" class="icon-btn mobile-only">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="3" y1="12" x2="21" y2="12"></line>
                         <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -120,7 +116,7 @@
             <div
                 style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; margin-bottom: 6rem;">
                 <div>
-                    <h3 class="serif" style="font-size: 1.5rem; margin-bottom: 1.5rem; letter-spacing: 0.05em;">Yusking
+                    <h3 class="serif" style="font-size: 1.5rem; margin-bottom: 1.5rem; letter-spacing: 0.05em;">YAU
                     </h3>
                     <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Providing the world's most luxurious
                         textiles directly to artisans and creators. Elegance by the yard.</p>

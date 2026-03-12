@@ -153,11 +153,11 @@ function removeFromCart(productId) {
 }
 
 function openCart() {
-    cartDrawer.style.right = '0';
+    cartDrawer.classList.add('active');
 }
 
 function closeCartDrawer() {
-    cartDrawer.style.right = '-450px';
+    cartDrawer.classList.remove('active');
 }
 
 function handleCheckout() {
@@ -201,7 +201,8 @@ function setupEventListeners() {
 
     // Mobile Menu Toggle
     if (mobileMenuBtn && navLinks) {
-        mobileMenuBtn.addEventListener('click', () => {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent document click from immediately closing
             navLinks.classList.toggle('active');
         });
     }
@@ -222,10 +223,15 @@ function setupEventListeners() {
         renderProducts();
     });
 
-    // Close cart if clicking outside
+    // Close components if clicking outside
     document.addEventListener('click', (e) => {
-        if (!cartDrawer.contains(e.target) && !cartBtn.contains(e.target) && cartDrawer.style.right === '0px') {
+        // Close cart
+        if (!cartDrawer.contains(e.target) && !cartBtn.contains(e.target) && cartDrawer.classList.contains('active')) {
             closeCartDrawer();
+        }
+        // Close nav menu on mobile
+        if (navLinks && !navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target) && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
         }
     });
 }
