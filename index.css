@@ -171,17 +171,30 @@ section {
 
 /* Responsive */
 @media (max-width: 900px) {
+    .mobile-only {
+        display: block !important;
+    }
+
     nav {
-        flex-direction: column !important;
-        gap: 1.5rem !important;
-        padding: 1rem !important;
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        padding: 1rem 1.5rem !important;
     }
 
     nav ul {
+        display: none;
         width: 100%;
+        flex-direction: column;
         justify-content: center !important;
+        align-items: center;
         gap: 1.5rem !important;
-        flex-wrap: wrap;
+        padding: 1.5rem 0;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        margin-top: 1rem;
+    }
+    
+    nav ul.active {
+        display: flex;
     }
 
     #hero {

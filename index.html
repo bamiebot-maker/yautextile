@@ -19,11 +19,11 @@
 
     <!-- Navigation -->
     <header class="glass reveal" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
-        <nav class="container"
-            style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem;">
+        <nav class="container" id="main-nav"
+            style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; position: relative;">
             <a href="#" class="serif"
                 style="font-size: 1.5rem; letter-spacing: 0.1em; text-transform: uppercase;">YAU</a>
-            <ul
+            <ul id="nav-links"
                 style="display: flex; gap: 3rem; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#collection">Collection</a></li>
@@ -39,6 +39,13 @@
                     </svg>
                     <span id="cart-count"
                         style="position: absolute; top: -8px; right: -8px; background: hsl(var(--accent)); color: white; font-size: 10px; padding: 2px 6px; border-radius: 10px; font-weight: 700;">0</span>
+                </button>
+                <button id="mobile-menu-btn" class="mobile-only" style="background: none; border: none; cursor: pointer; color: inherit; display: none;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
                 </button>
             </div>
         </nav>

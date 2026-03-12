@@ -41,6 +41,8 @@ const cartCount = document.getElementById('cart-count');
 const cartTotal = document.getElementById('cart-total');
 const filterBtns = document.querySelectorAll('#filter-btns .btn');
 const searchInput = document.getElementById('product-search');
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const navLinks = document.getElementById('nav-links');
 
 // Initialization
 function init() {
@@ -196,6 +198,13 @@ function setupEventListeners() {
     cartBtn.addEventListener('click', openCart);
     closeCart.addEventListener('click', closeCartDrawer);
     document.getElementById('checkout-btn').addEventListener('click', handleCheckout);
+
+    // Mobile Menu Toggle
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
 
     // Filter Listeners
     filterBtns.forEach(btn => {
